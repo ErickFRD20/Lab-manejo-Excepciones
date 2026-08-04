@@ -25,4 +25,20 @@ public class controladorCalculadora {
         esperarValor2=false;
         resultadoMostrado=false;
     }
+    
+    private boolean operacionValida(String operacionNueva){
+        if (operacionNueva.equals("+")) {
+            return true;
+        }
+        if(operacionNueva.equals("-")){
+            return true;
+        }
+        if (operacionNueva.equals("*")) {
+            return true;
+        }
+        if (operacionNueva.equals("/")) {
+            return true;
+        }
+        return false;
+    }
 }
