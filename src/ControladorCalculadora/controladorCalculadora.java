@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ControladorCalculadora;
-
 /**
  *
  * @author Student
@@ -41,4 +40,48 @@ public class controladorCalculadora {
         }
         return false;
     }
+    
+    public boolean seleccionarOperacion(String textoPantalla, String operacionNueva){
+        if (textoPantalla==null || textoPantalla.isEmpty()) {
+            return false;
+        }
+        
+        if(operacionElegida){
+            return false;
+        }
+        
+        if(!operacionValida(operacionNueva)){
+            return false;
+        }
+        
+        try {
+            valor1 = Double.parseDouble(textoPantalla);
+            operacion = operacionNueva;
+            operacionElegida = true;
+            esperarValor2 = true;
+            resultadoMostrado = false;
+            return true;
+        } catch (NumberFormatException error){
+            return false;
+        }
+    }
+    
+    private boolean guardarValor2(String textoPantalla){
+
+    if(!operacionElegida){
+        return false;
+    }
+
+    if(textoPantalla==null || textoPantalla.isEmpty()){
+        return false;
+    }
+
+    try{
+        valor2 = Double.parseDouble(textoPantalla);
+        return true;
+
+    }catch (NumberFormatException error){
+        return false;
+    }
+  }
 }
