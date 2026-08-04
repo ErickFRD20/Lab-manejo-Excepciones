@@ -16,6 +16,7 @@ public class controladorBotones {
     }
     public String agregarPunto(String texto){
         if (!texto.contains(".")){
+            
             return texto;
             
         }
