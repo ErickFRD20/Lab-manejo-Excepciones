@@ -14,18 +14,18 @@ public class controladorBotones {
         texto = texto + numero;
         return texto;
     }
-    public String agregarPunto(String texto){
-        if (!texto.contains(".")){
-            
-            return texto;
-            
-        }
-        if (texto.length()==0){
-            texto = "0";
-        }
-        texto = texto + ".";
+ public String agregarPunto(String texto){
+    if (texto.contains(".")){
         return texto;
     }
+
+    if (texto.length() == 0){
+        texto = "0";
+    }
+
+    texto = texto + ".";
+    return texto;
+}
         public String cambiarSigno(String texto) {
 
         if (texto.length() == 0) {
