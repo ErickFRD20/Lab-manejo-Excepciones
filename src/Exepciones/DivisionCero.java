@@ -8,6 +8,10 @@ package Exepciones;
  *
  * @author josed
  */
-public class DivisionCero {
+public class DivisionCero extends Exception {
+    
+    public DivisionCero(String mensaje){
+        super(mensaje);
+    }
     
 }

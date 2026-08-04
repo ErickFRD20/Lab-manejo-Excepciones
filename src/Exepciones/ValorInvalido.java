@@ -8,6 +8,9 @@ package Exepciones;
  *
  * @author josed
  */
-public class ValorInvalido {
+public class ValorInvalido extends Exception {
+    public ValorInvalido(String mensaje){
+        super(mensaje);
     
+    }
 }
