@@ -4,6 +4,7 @@
  */
 package vistaCalculadora;
 
+import ControladorCalculadora.controladorBotones;
 import ControladorCalculadora.controladorCalculadora;
 
 /**
@@ -14,14 +15,16 @@ public class FrmPantallaCalculadora extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmPantallaCalculadora.class.getName());
 
-    private controladorCalculadora controlador;
+    private controladorCalculadora controladorCalc;
+    private controladorBotones controladorBtn;
     
     /**
      * Creates new form FrmPantallaCalculadora
      */
     public FrmPantallaCalculadora() {
         initComponents();
-        controlador = new controladorCalculadora();
+        controladorCalc = new controladorCalculadora();
+        controladorBtn = new controladorBotones();
     }
 
     /**
@@ -287,79 +290,91 @@ public class FrmPantallaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPantallaCalcActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-       controlador.agregarNumero("2");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "2"));
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btnPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeActionPerformed
-        // TODO add your handling code here:
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "2"));
     }//GEN-LAST:event_btnPorcentajeActionPerformed
 
     private void btnACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACActionPerformed
-        // TODO add your handling code here:
+        txtPantallaCalc.setText(controladorBtn.reiniciar());
     }//GEN-LAST:event_btnACActionPerformed
 
     private void btnCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCAActionPerformed
-        // TODO add your handling code here:
+        txtPantallaCalc.setText(controladorBtn.limpiarActual());
     }//GEN-LAST:event_btnCAActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        txtPantallaCalc.setText(controladorBtn.borrarUltimo(txtPantallaCalc.getText()));
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
-        // TODO add your handling code here:
+        boolean funciona = controladorCalc.seleccionarOperacion(txtPantallaCalc.getText(), "/");
+        if (funciona) {
+        txtPantallaCalc.setText("");
+    }
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-       controlador.agregarNumero("7");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "7"));
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-       controlador.agregarNumero("8");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "8"));
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-       controlador.agregarNumero("9");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "9"));
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
-        // TODO add your handling code here:
+        boolean funciona = controladorCalc.seleccionarOperacion(txtPantallaCalc.getText(), "*");
+        if (funciona) {
+        txtPantallaCalc.setText("");
+    }
     }//GEN-LAST:event_btnMultiplicarActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-       controlador.agregarNumero("4");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "4"));
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-       controlador.agregarNumero("5");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "5"));
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-       controlador.agregarNumero("6");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "6"));
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaActionPerformed
-        // TODO add your handling code here:
+        boolean funciona = controladorCalc.seleccionarOperacion(txtPantallaCalc.getText(), "-");
+        if (funciona) {
+        txtPantallaCalc.setText("");
+    }
     }//GEN-LAST:event_btnRestaActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-       controlador.agregarNumero("1");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "1"));
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-       controlador.agregarNumero("3");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "3"));
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaActionPerformed
-        // TODO add your handling code here:
+        boolean funciona = controladorCalc.seleccionarOperacion(txtPantallaCalc.getText(), "+");
+        if (funciona) {
+        txtPantallaCalc.setText("+");
+    }
     }//GEN-LAST:event_btnSumaActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-       controlador.agregarNumero("0");
+        txtPantallaCalc.setText(controladorBtn.agregarNumero(txtPantallaCalc.getText(), "0"));
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntoActionPerformed
-        // TODO add your handling code here:
+        txtPantallaCalc.setText(controladorBtn.agregarPunto(txtPantallaCalc.getText()));
     }//GEN-LAST:event_btnPuntoActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
